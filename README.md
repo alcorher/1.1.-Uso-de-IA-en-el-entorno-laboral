@@ -6,13 +6,16 @@ Clasificador supervisado para apoyar el triaje de incidencias técnicas en equip
 
 Los equipos reciben incidencias de distintos tipos y necesitan clasificarlas con rapidez para encaminarlas al área adecuada. El MVP aprende de ejemplos etiquetados para asignar cada nuevo ticket a `bug`, `feature`, `performance`, `security` o `docs`. Es una ayuda para priorizar y organizar el trabajo, no sustituye la revisión humana, especialmente ante incidencias de seguridad.
 
+## Documentación técnica detallada
+
+- [Arquitectura y funcionamiento interno](docs/ARQUITECTURA.md): flujo de datos, dataset, pipeline y lectura de métricas.
+- [Guía de ejecución paso a paso](docs/GUIA_EJECUCION.md): instalación de `uv`, comandos, salidas verificadas y solución de problemas.
+
 ## Arquitectura y algoritmo
 
-El proyecto utiliza **aprendizaje supervisado**: cada texto de entrenamiento tiene una categoría conocida y el modelo aprende una función de clasificación a partir de esos ejemplos. Se combinan título y descripción; una función común normaliza el texto y elimina URLs.
+El MVP aplica aprendizaje supervisado mediante un `Pipeline` de scikit-learn con TF-IDF (n-gramas 1–2) y regresión logística. Una partición estratificada reserva el 20% de los 600 tickets para evaluación; el pipeline aprende el vocabulario solo con entrenamiento para evitar *data leakage*. El detalle de diseño se documenta en [Arquitectura](docs/ARQUITECTURA.md).
 
-El `Pipeline` de scikit-learn encadena `TfidfVectorizer` con n-gramas de 1 y 2 palabras y `LogisticRegression`. TF-IDF pondera términos informativos; los n-gramas capturan expresiones técnicas breves. La regresión logística es ligera, proporciona probabilidades y permite inspeccionar los pesos asociados a las características. El pipeline se ajusta únicamente con la partición de entrenamiento, evitando que el vocabulario calculado por el vectorizador filtre información de la prueba (*data leakage*).
-
-La partición estratificada reserva el 20% de los 600 registros para evaluación. El generador mantiene una distribución ligeramente desbalanceada y reasigna al azar el 10% de los rótulos a categorías relacionadas: representa la ambigüedad de triage y evita una evaluación artificialmente perfecta. Métricas obtenidas al ejecutar `train.py` (semilla fija):
+Métricas reales de la ejecución actual de `train.py`:
 
 | Métrica | Valor |
 |---|---:|
@@ -20,9 +23,7 @@ La partición estratificada reserva el 20% de los 600 registros para evaluación
 | F1 macro | 0.919 |
 | F1 ponderado | 0.925 |
 
-F1 por clase: bug 0.93, docs 0.92, feature 0.96, performance 0.92 y security 0.86.
-
-El detalle por clase y la matriz de confusión se guardan en [`docs/metrics.json`](docs/metrics.json). Las métricas se refieren a datos sintéticos generados para esta práctica y no predicen el rendimiento sobre incidencias reales.
+El informe completo y la matriz de confusión se guardan en [`docs/metrics.json`](docs/metrics.json). Las métricas son de datos sintéticos y no predicen el rendimiento sobre incidencias reales.
 
 ## Investigación y mapeo crítico de herramientas de IA
 
@@ -49,7 +50,7 @@ Se utilizó **Gemini** para desarrollar la idea inicial, crear y refinar prompts
 
 ## Requisitos, instalación y ejecución
 
-Se requiere Python 3.11 o superior y [`uv`](https://docs.astral.sh/uv/). Si `uv` no está instalado, sigue las instrucciones oficiales de instalación de Astral para tu sistema operativo; después comprueba `uv --version`. Desde la raíz del proyecto:
+Se requiere Python 3.11 o superior y [`uv`](https://docs.astral.sh/uv/). Desde la raíz del proyecto, sincroniza el entorno y ejecuta los pasos principales:
 
 ```bash
 uv sync
@@ -59,13 +60,13 @@ uv run python src/predict.py --demo
 uv run pytest -v
 ```
 
-Para clasificar un texto:
+Para clasificar un texto individual:
 
 ```bash
 uv run python src/predict.py --text "La API devuelve HTTP 500 al guardar un registro"
 ```
 
-El entrenamiento genera `models/triage_pipeline.joblib` y actualiza `docs/metrics.json`. El CSV generado se puede reconstruir de forma determinista. `uv.lock` fija las dependencias para sincronizar un entorno reproducible.
+El entrenamiento genera `models/triage_pipeline.joblib` y actualiza `docs/metrics.json`; `uv.lock` fija las dependencias. Consulta la [Guía de ejecución](docs/GUIA_EJECUCION.md) para instalación, explicación de los comandos, ejemplos completos de salidas y solución de problemas.
 
 ## Bitácora de desarrollo asistido por IA
 
