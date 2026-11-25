@@ -35,24 +35,24 @@ Las negaciones («no hay error») y el lenguaje ambiguo pueden invertir el senti
 
 | Herramienta y categoría | Integración en el flujo | Ventajas observables | Limitaciones y riesgos |
 |---|---|---|---|
-| GitHub Copilot Coding Agent / Codex — programación agéntica | Asignar una tarea acotada con criterios de aceptación; revisar cambios y pruebas en una rama o diff antes de integrar. | Puede acelerar tareas repetitivas, proponer implementaciones y trabajar con contexto del repositorio. | Puede alucinar APIs o criterios, introducir deuda técnica y requerir supervisión. El envío de código a servicios externos debe ajustarse a las políticas de privacidad y configuración de la organización. |
-| Qodo (CodiumAI) — generación y análisis de pruebas | Usarlo para proponer casos límite y revisar cobertura; validar cada prueba contra el comportamiento esperado y los requisitos. | Ayuda a detectar escenarios omitidos y a generar esqueletos de pruebas con rapidez. | Puede crear pruebas acopladas a la implementación, mocks excesivos o asserts que solo confirman el código actual. Las pruebas generadas no sustituyen el diseño ni la revisión. |
-| GitHub Projects / Issues + Copilot — gestión y trazabilidad | Registrar alcance, criterios de aceptación, decisiones y tareas; enlazar pull requests, cambios y revisiones con Issues/Projects. | Aporta visibilidad del progreso y trazabilidad desde el requisito hasta la implementación. | La calidad depende de mantener actualizados Issues y tableros; resúmenes automáticos pueden omitir contexto. Revisar privacidad, permisos y contenido compartido. |
+| Google Gemini — planificación, diseño y consultoría técnica | Interfaz web conversacional empleada de forma iterativa antes y durante el desarrollo para definir el alcance del MVP, validar el paradigma supervisado (`TF-IDF + LogisticRegression`), estructurar especificaciones técnicas (`SPEC.md`) y resolver dudas conceptuales. | Desglosa requisitos ambiguos en especificaciones estructuradas, ayuda a detectar riesgos metodológicos antes de escribir código (como *data leakage* o datasets triviales) y adapta la arquitectura a herramientas concretas como `uv`. | Al operar fuera del repositorio, no tiene acceso directo en tiempo real al sistema de archivos ni ejecución de terminal. El desarrollador debe trasladar manualmente el contexto y verificar que las propuestas encajen con el estado real del código. |
+| GitHub Copilot Coding Agent y Code Review — implementación, testing, documentación y revisión de Pull Requests | Integrado nativamente en el repositorio de GitHub en dos roles complementarios: el Coding Agent se asigna a *Issues* para desarrollar funcionalidades en ramas aisladas y abrir *Pull Requests*; Copilot Code Review analiza automáticamente los *diffs* antes de integrarlos en `main`. | Automatiza la creación de módulos, tests unitarios, flujos de CI y documentación técnica a partir de especificaciones bien acotadas, y aporta una primera capa automatizada de revisión para detectar errores sintácticos, inconsistencias o mejoras de estilo. | Su eficacia depende de la precisión del *prompt* o *Issue* inicial. En la revisión de *Pull Requests* puede centrarse en aspectos superficiales sin detectar fallos de lógica de dominio o metodología de *Machine Learning*, por lo que exige supervisión humana antes del *merge*. |
+| GitHub Issues, Pull Requests y GitHub Actions — gestión de proyectos y verificación automatizada | Herramientas nativas del repositorio remoto para planificar tareas por hitos (*Issues*), auditar cambios generados por el agente (*PR diffs*) y validar automáticamente la suite (`uv run pytest -v`) en cada *Pull Request* o *push* a `main`. | Proporcionan trazabilidad entre cada requisito, la intervención del agente, la revisión de código y la verificación automática, ayudando a evitar la integración de cambios que rompan la ejecución. | Un *pipeline* en verde solo indica que pasan los tests actuales; sin revisión humana crítica de la cobertura y del diseño en los PRs, pueden pasar desapercibidos casos límite o decisiones arquitectónicas subóptimas. |
 
 Estas herramientas son complementarias: la IA propone y ayuda a ejecutar, mientras que las decisiones de diseño, la revisión de calidad y la responsabilidad de integrar siguen en manos del equipo.
 
 ### Herramientas utilizadas en este proyecto
 
-Se utilizó **Gemini** para desarrollar la idea inicial, crear y refinar prompts, y resolver dudas durante la definición del proyecto. **Copilot Agents** se utilizó para realizar el proyecto: implementar sus componentes, documentación y pruebas, y ejecutar las verificaciones. Las propuestas generadas se contrastaron con la especificación y los resultados ejecutados.
+Se utilizó **Google Gemini** como asistente conversacional para planificar, diseñar y resolver dudas; **GitHub Copilot Coding Agent** para implementar tareas asignadas mediante *Issues*; y **GitHub Copilot Code Review** para analizar *Pull Requests*. **GitHub Issues, Pull Requests y Actions** aportaron planificación, trazabilidad y verificación continua. Las propuestas y revisiones automatizadas se contrastaron con el código, las pruebas y los resultados ejecutados.
 
 ## Distribución por fase del MVP
 
 | Fase | Uso propuesto |
 |---|---|
-| Planificación | Gemini para concretar la idea, crear prompts y resolver dudas; Issues/Projects pueden ayudar a registrar alcance y seguimiento. |
-| Desarrollo | Copilot Agents para realizar los componentes del proyecto; revisión de cambios y ejecución local de comandos. |
-| Testing | Copilot Agents para apoyar la implementación de pruebas; pytest para verificar comportamiento y casos límite. Qodo es una alternativa evaluada, no una herramienta utilizada en este proyecto. |
-| Documentación | Copilot Agents para apoyar la redacción del README; revisión de que comandos, salidas y métricas coincidan con el proyecto. |
+| Planificación y diseño arquitectónico | **Gemini + GitHub Issues:** selección del paradigma supervisado, definición de categorías del dataset, prevención de *data leakage* mediante `Pipeline` y redacción iterativa de especificaciones técnicas. |
+| Implementación del código y entorno `uv` | **GitHub Copilot Coding Agent:** inicialización del proyecto con `pyproject.toml` y `uv.lock`, y desarrollo de `generate_dataset.py`, `utils.py`, `train.py` y `predict.py` (incluido el modo `--explain`). |
+| Revisión de código, testing y CI | **GitHub Copilot Code Review + pytest + GitHub Actions:** creación de `tests/test_pipeline.py`, análisis automatizado de cada *Pull Request* mediante Copilot Code Review y validación continua en `.github/workflows/ci.yml`. |
+| Documentación y auditoría humana | **Gemini + Copilot + revisión manual:** generación de `docs/ARQUITECTURA.md` y `docs/GUIA_EJECUCION.md`, inspección manual de comentarios y *diffs* de cada PR antes del *merge* y captura local de evidencias. |
 
 ## Requisitos, instalación y ejecución
 
@@ -76,13 +76,13 @@ El entrenamiento genera `models/triage_pipeline.joblib` y actualiza `docs/metric
 
 ## Bitácora de desarrollo asistido por IA
 
-| Tarea delegada a la IA | Riesgo metodológico detectado | Decisión y corrección aplicada |
+| Iteración y herramientas | Riesgo o necesidad detectada | Decisión humana y resultado |
 |---|---|---|
-| Definir y refinar la idea, crear prompts y resolver dudas (Gemini). | Las propuestas iniciales pueden ser ambiguas o no ajustarse al alcance académico. | Usar Gemini como apoyo de ideación y aclaración; contrastar y concretar los requisitos en la especificación. |
-| Realizar el proyecto: generación de datos, pipeline de clasificación, CLI, pruebas y documentación (Copilot Agents). | La vectorización antes del split provoca *data leakage*; plantillas sintéticas triviales podrían producir accuracy perfecto; mocks excesivos pueden acoplar tests a la implementación. | Encapsular TF-IDF y el clasificador en `Pipeline`, introducir ambigüedad controlada en los datos y verificar el comportamiento con pytest e inferencia real. |
-| Revisar resultados y documentación generados con asistencia de IA. | Las salidas pueden contener errores o afirmar resultados no verificados. | Ejecutar los comandos documentados y reflejar en el README las métricas obtenidas, con sus limitaciones explícitas. |
-
-Gemini se empleó para la ideación, la creación de prompts y la resolución de dudas; Copilot Agents, para la realización del proyecto. En ambos casos, la asistencia se trató como apoyo y las salidas se verificaron contra los requisitos y las pruebas antes de incorporarlas.
+| Definición inicial y prevención de *data leakage* (**Gemini → Copilot Agent**) | Al plantear el clasificador en Gemini, se detectó el riesgo de aplicar `TfidfVectorizer` antes de `train_test_split`; un dataset sintético trivial también podía generar métricas artificialmente perfectas. | Exigir en la especificación un `sklearn.pipeline.Pipeline` encapsulado y solapamiento realista en el dataset sintético. |
+| Estandarización del entorno con `uv` (**Gemini → Copilot Agent**) | La especificación inicial se basaba en `pip` y `requirements.txt`, lo que no correspondía al entorno elegido para el proyecto. | Ajustarla para migrar a `uv` (`pyproject.toml` + `uv.lock`) y facilitar una reproducibilidad consistente entre entornos. |
+| Ampliación de documentación técnica (**Gemini → Copilot Agent**) | El `README.md` resultaba insuficiente para explicar el funcionamiento interno y la ejecución detallada. | Crear un *Issue* específico para generar `docs/ARQUITECTURA.md` y `docs/GUIA_EJECUCION.md` con salidas reales de terminal. |
+| Explicabilidad e integración continua (**Gemini → Copilot Agent**) | Se necesitaba entender qué palabras impulsan cada predicción y automatizar la comprobación de pruebas. | Incorporar `--explain` en `predict.py`, análisis de errores en `train.py` y `.github/workflows/ci.yml` para ejecutar `pytest` en cada PR. |
+| Revisión de Pull Requests y validación local (**Copilot Code Review + criterio humano**) | La revisión automatizada puede pasar por alto problemas de lógica o sugerir cambios que no encajan con el dominio; los enlaces y comandos también deben corresponder al proyecto real. | Analizar las PRs con Copilot Code Review, filtrar sus sugerencias con criterio humano, verificar enlaces internos y ejecutar localmente los comandos de demostración para capturar evidencias reales. |
 
 ## Verificación y evidencias (capturas)
 
