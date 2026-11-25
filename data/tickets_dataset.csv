@@ -1,0 +1,601 @@
+id,title,description,category
+TKT-0107,La operación guardar un registro devuelve un fallo inesperado,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0372,Alto consumo de memoria durante cargar el historial,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0068,Excepción intermitente en panel de administración,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0237,Solicitud de mejora: notificaciones,Sería útil permitir iniciar sesión sin salir de la pantalla actual.,feature
+TKT-0248,Solicitud de mejora: notificaciones,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,bug
+TKT-0464,Dependencia crítica pendiente de actualizar,Una entrada sin validar podría permitir inyección en el navegador.,security
+TKT-0178,La interfaz se rompe al guardar un registro,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba.",bug
+TKT-0015,La interfaz se rompe al guardar un registro,En producción aparece HTTP 500 al iniciar sesión; los logs muestran un stack trace.,bug
+TKT-0474,Posible vulnerabilidad XSS en servicio de pagos,Una entrada sin validar podría permitir inyección en el navegador.,security
+TKT-0303,Permitir guardar un registro desde el panel,"El comportamiento actual funciona, pero falta soporte para búsqueda por etiquetas.",feature
+TKT-0564,Documentación desactualizada para exportar datos,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0097,La operación cargar el historial devuelve un fallo inesperado,"La pantalla queda en blanco después de cargar el historial, aunque antes funcionaba.",bug
+TKT-0556,Falta un ejemplo para exportación CSV en la API,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0261,Permitir exportar datos desde el panel,Se solicita una API nueva para que los clientes puedan búsqueda por etiquetas.,feature
+TKT-0242,Nuevo endpoint para exportación CSV,Se solicita una API nueva para que los clientes puedan exportación CSV.,docs
+TKT-0131,HTTP 500 al exportar datos desde la aplicación,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario. El impacto depende del volumen de tráfico y del entorno de ejecución.,bug
+TKT-0451,Posible vulnerabilidad SQLi en endpoint de usuarios,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0036,Excepción intermitente en panel de administración,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0132,Excepción intermitente en API de reportes,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0250,Nuevo endpoint para exportación CSV,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0106,HTTP 500 al actualizar el perfil desde la aplicación,El usuario recibe una excepción ValueError y la operación no termina.,bug
+TKT-0159,La operación guardar un registro devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0357,Alto consumo de memoria durante actualizar el perfil,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,bug
+TKT-0537,Añadir pasos de configuración para panel de administración,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0572,Documentación desactualizada para exportar datos,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0331,Alto consumo de memoria durante cargar el historial,La consulta tarda varios segundos y el p95 supera el objetivo de latencia. En una parte del flujo también se observa un timeout ocasional.,bug
+TKT-0379,CPU elevada en el servicio de endpoint de usuarios,La consulta tarda varios segundos y el p95 supera el objetivo de latencia. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,performance
+TKT-0350,CPU elevada en el servicio de servicio de pagos,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0461,Posible vulnerabilidad inyección en API de reportes,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0202,Nuevo endpoint para paginación,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",feature
+TKT-0187,Solicitud de mejora: búsqueda por etiquetas,La interfaz debería ofrecer una opción para notificaciones y confirmar el resultado.,docs
+TKT-0468,Acceso no autorizado a recursos de endpoint de usuarios,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0477,Revisar validación de entrada en guardar un registro,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0538,El ejemplo de filtros avanzados no coincide con la API,El parámetro documentado no coincide con la respuesta actual del servicio.,feature
+TKT-0395,CPU elevada en el servicio de servicio de pagos,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0388,Consulta lenta al cargar endpoint de usuarios,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0148,HTTP 500 al exportar datos desde la aplicación,"La pantalla queda en blanco después de iniciar sesión, aunque antes funcionaba.",bug
+TKT-0294,Solicitud de mejora: búsqueda por etiquetas,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0332,Optimizar el rendimiento de actualizar el perfil,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0112,HTTP 500 al exportar datos desde la aplicación,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba.",bug
+TKT-0575,Actualizar la guía de panel de administración,El parámetro documentado no coincide con la respuesta actual del servicio.,feature
+TKT-0234,Permitir cargar el historial desde el panel,Sería útil permitir iniciar sesión sin salir de la pantalla actual. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,bug
+TKT-0407,Timeout al procesar solicitudes grandes,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0130,La operación exportar datos devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0199,Permitir exportar datos desde el panel,La interfaz debería ofrecer una opción para notificaciones y confirmar el resultado.,feature
+TKT-0079,HTTP 500 al actualizar el perfil desde la aplicación,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0393,Alto consumo de memoria durante exportar datos,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,bug
+TKT-0210,Permitir guardar un registro desde el panel,La interfaz debería ofrecer una opción para paginación y confirmar el resultado.,feature
+TKT-0030,Regresión en API de reportes tras el último despliegue,"La pantalla queda en blanco después de cargar el historial, aunque antes funcionaba.",bug
+TKT-0120,La operación iniciar sesión devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,security
+TKT-0090,La interfaz se rompe al exportar datos,En producción aparece HTTP 500 al actualizar el perfil; los logs muestran un stack trace.,bug
+TKT-0490,Dependencia crítica pendiente de actualizar,La ruta no comprueba correctamente la autorización antes de devolver datos.,security
+TKT-0265,Añadir filtros avanzados para los usuarios,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0325,Añadir búsqueda por etiquetas para los usuarios,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0494,Acceso no autorizado a recursos de formulario de acceso,Una entrada sin validar podría permitir XSS en el navegador.,security
+TKT-0571,Corregir instrucciones del README,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0410,Optimizar el rendimiento de guardar un registro,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0424,Token expuesto en los logs del servicio,La ruta no comprueba correctamente la autorización antes de devolver datos.,performance
+TKT-0082,La operación cargar el historial devuelve un fallo inesperado,El usuario recibe una excepción TypeError y la operación no termina.,bug
+TKT-0505,Posible vulnerabilidad XSS en endpoint de usuarios,La dependencia afectada tiene una alerta crítica y requiere mitigación. En una parte del flujo también se observa un timeout ocasional.,security
+TKT-0222,Propuesta para ampliar endpoint de usuarios,"El comportamiento actual funciona, pero falta soporte para búsqueda por etiquetas.",feature
+TKT-0192,Nuevo endpoint para notificaciones,Sería útil permitir guardar un registro sin salir de la pantalla actual.,feature
+TKT-0304,Nuevo endpoint para exportación CSV,La interfaz debería ofrecer una opción para filtros avanzados y confirmar el resultado.,feature
+TKT-0425,Token expuesto en los logs del servicio,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0051,HTTP 500 al actualizar el perfil desde la aplicación,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba.",bug
+TKT-0327,Propuesta para ampliar panel de administración,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0498,Permisos incorrectos al acceder a endpoint de usuarios,La ruta no comprueba correctamente la autorización antes de devolver datos.,security
+TKT-0362,Consulta lenta al cargar formulario de acceso,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0231,Propuesta para ampliar API de reportes,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0165,HTTP 500 al actualizar el perfil desde la aplicación,El comportamiento se reproduce en la última versión de la API y bloquea el flujo habitual. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,bug
+TKT-0223,Solicitud de mejora: exportación CSV,Sería útil permitir cargar el historial sin salir de la pantalla actual.,feature
+TKT-0496,Token expuesto en los logs del servicio,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0138,Regresión en panel de administración tras el último despliegue,"La pantalla queda en blanco después de cargar el historial, aunque antes funcionaba.",performance
+TKT-0450,Posible vulnerabilidad inyección en panel de administración,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0447,Token expuesto en los logs del servicio,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0196,Permitir actualizar el perfil desde el panel,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",bug
+TKT-0204,Añadir notificaciones para los usuarios,La interfaz debería ofrecer una opción para búsqueda por etiquetas y confirmar el resultado. En una parte del flujo también se observa un timeout ocasional.,feature
+TKT-0267,Mejorar la experiencia de formulario de acceso,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0536,Documentación desactualizada para guardar un registro,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0485,Token expuesto en los logs del servicio,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0476,Permisos incorrectos al acceder a API de reportes,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0176,La interfaz se rompe al actualizar el perfil,El usuario recibe una excepción TypeError y la operación no termina.,bug
+TKT-0396,Optimizar el rendimiento de guardar un registro,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0317,Permitir actualizar el perfil desde el panel,"El comportamiento actual funciona, pero falta soporte para búsqueda por etiquetas.",feature
+TKT-0323,Nuevo endpoint para búsqueda por etiquetas,La interfaz debería ofrecer una opción para paginación y confirmar el resultado. El reporte apareció después de un cambio reciente en el servicio.,feature
+TKT-0281,Solicitud de mejora: exportación CSV,Sería útil permitir actualizar el perfil sin salir de la pantalla actual.,feature
+TKT-0446,Revisar validación de entrada en exportar datos,Un usuario sin permisos puede consultar datos de otra cuenta.,performance
+TKT-0135,La operación exportar datos devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0032,HTTP 500 al guardar un registro desde la aplicación,El comportamiento se reproduce en Chrome y bloquea el flujo habitual. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0297,Permitir actualizar el perfil desde el panel,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0594,Falta un ejemplo para filtros avanzados en la API,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0523,Documentación desactualizada para iniciar sesión,El README describe una opción que ya no existe y confunde a quienes empiezan. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,docs
+TKT-0163,La interfaz se rompe al cargar el historial,En producción aparece HTTP 500 al actualizar el perfil; los logs muestran un stack trace.,bug
+TKT-0099,Regresión en panel de administración tras el último despliegue,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba.",bug
+TKT-0162,La interfaz se rompe al iniciar sesión,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0565,Documentación desactualizada para cargar el historial,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0354,Aumenta la latencia de formulario de acceso,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0184,Mejorar la experiencia de endpoint de usuarios,Sería útil permitir cargar el historial sin salir de la pantalla actual.,feature
+TKT-0330,Solicitud de mejora: paginación,Se solicita una API nueva para que los clientes puedan notificaciones.,feature
+TKT-0501,Token expuesto en los logs del servicio,Un usuario sin permisos puede consultar datos de otra cuenta.,bug
+TKT-0361,Timeout al procesar solicitudes grandes,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0374,Optimizar el rendimiento de actualizar el perfil,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0444,Dependencia crítica pendiente de actualizar,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0384,Optimizar el rendimiento de exportar datos,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico. El reporte apareció después de un cambio reciente en el servicio.,performance
+TKT-0114,La interfaz se rompe al exportar datos,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario. El impacto depende del volumen de tráfico y del entorno de ejecución.,bug
+TKT-0122,La operación exportar datos devuelve un fallo inesperado,El usuario recibe una excepción RuntimeError y la operación no termina.,bug
+TKT-0235,Propuesta para ampliar panel de administración,La interfaz debería ofrecer una opción para filtros avanzados y confirmar el resultado. El reporte apareció después de un cambio reciente en el servicio.,feature
+TKT-0561,Añadir pasos de configuración para formulario de acceso,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0438,Dependencia crítica pendiente de actualizar,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0440,Token expuesto en los logs del servicio,Una entrada sin validar podría permitir control de acceso roto en el navegador.,security
+TKT-0227,Solicitud de mejora: exportación CSV,Sería útil permitir guardar un registro sin salir de la pantalla actual. En una parte del flujo también se observa un timeout ocasional.,docs
+TKT-0315,Solicitud de mejora: exportación CSV,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0110,Error al cargar el historial en servicio de pagos,El comportamiento se reproduce en la última versión de la API y bloquea el flujo habitual.,bug
+TKT-0386,Consulta lenta al cargar API de reportes,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0284,Mejorar la experiencia de servicio de pagos,"El comportamiento actual funciona, pero falta soporte para paginación.",feature
+TKT-0063,Error al exportar datos en panel de administración,En producción aparece HTTP 500 al guardar un registro; los logs muestran un stack trace.,bug
+TKT-0207,Propuesta para ampliar servicio de pagos,Se solicita una API nueva para que los clientes puedan filtros avanzados.,feature
+TKT-0313,Nuevo endpoint para notificaciones,La interfaz debería ofrecer una opción para notificaciones y confirmar el resultado.,feature
+TKT-0408,Consulta lenta al cargar servicio de pagos,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0177,Excepción intermitente en API de reportes,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,bug
+TKT-0486,Token expuesto en los logs del servicio,El token de acceso aparece en los logs y debe quedar redactado. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,security
+TKT-0291,Añadir búsqueda por etiquetas para los usuarios,La interfaz debería ofrecer una opción para búsqueda por etiquetas y confirmar el resultado.,feature
+TKT-0266,Solicitud de mejora: búsqueda por etiquetas,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0338,Consulta lenta al cargar API de reportes,El endpoint responde lentamente aunque no se registran excepciones en los logs. El impacto depende del volumen de tráfico y del entorno de ejecución.,performance
+TKT-0033,Error al actualizar el perfil en endpoint de usuarios,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0504,Token expuesto en los logs del servicio,La ruta no comprueba correctamente la autorización antes de devolver datos.,security
+TKT-0127,Regresión en API de reportes tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0067,La interfaz se rompe al guardar un registro,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba.",bug
+TKT-0359,Consulta lenta al cargar panel de administración,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0046,Error al guardar un registro en servicio de pagos,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0019,Error al actualizar el perfil en panel de administración,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0144,Error al iniciar sesión en API de reportes,El usuario recibe una excepción RuntimeError y la operación no termina.,bug
+TKT-0091,HTTP 500 al exportar datos desde la aplicación,En producción aparece HTTP 500 al cargar el historial; los logs muestran un stack trace.,bug
+TKT-0577,Añadir pasos de configuración para endpoint de usuarios,Falta un ejemplo completo de solicitud y respuesta para este endpoint. En una parte del flujo también se observa un timeout ocasional.,docs
+TKT-0300,Permitir exportar datos desde el panel,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,bug
+TKT-0018,Error al actualizar el perfil en API de reportes,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0169,La operación exportar datos devuelve un fallo inesperado,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0312,Añadir exportación CSV para los usuarios,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",feature
+TKT-0432,Revisar validación de entrada en actualizar el perfil,La dependencia afectada tiene una alerta crítica y requiere mitigación. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,security
+TKT-0343,Alto consumo de memoria durante cargar el historial,La consulta tarda varios segundos y el p95 supera el objetivo de latencia. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0592,Corregir instrucciones del README,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0149,Error al iniciar sesión en endpoint de usuarios,El comportamiento se reproduce en Chrome y bloquea el flujo habitual.,bug
+TKT-0150,Regresión en endpoint de usuarios tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0431,Token expuesto en los logs del servicio,Una entrada sin validar podría permitir XSS en el navegador.,security
+TKT-0525,Documentación desactualizada para guardar un registro,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0353,Timeout al procesar solicitudes grandes,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,security
+TKT-0484,Revisar validación de entrada en cargar el historial,Una entrada sin validar podría permitir SQLi en el navegador.,security
+TKT-0004,HTTP 500 al cargar el historial desde la aplicación,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",bug
+TKT-0344,CPU elevada en el servicio de panel de administración,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0128,La operación actualizar el perfil devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0221,Nuevo endpoint para paginación,La interfaz debería ofrecer una opción para búsqueda por etiquetas y confirmar el resultado.,feature
+TKT-0569,Documentación desactualizada para cargar el historial,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0500,Revisar validación de entrada en guardar un registro,La ruta no comprueba correctamente la autorización antes de devolver datos. El reporte apareció después de un cambio reciente en el servicio.,security
+TKT-0527,Documentación desactualizada para iniciar sesión,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0224,Nuevo endpoint para paginación,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo. El reporte apareció después de un cambio reciente en el servicio.,feature
+TKT-0100,HTTP 500 al iniciar sesión desde la aplicación,El comportamiento se reproduce en Firefox y bloquea el flujo habitual.,bug
+TKT-0473,Posible vulnerabilidad control de acceso roto en endpoint de usuarios,La dependencia afectada tiene una alerta crítica y requiere mitigación.,performance
+TKT-0111,HTTP 500 al cargar el historial desde la aplicación,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0483,Token expuesto en los logs del servicio,Una entrada sin validar podría permitir control de acceso roto en el navegador.,security
+TKT-0381,Consulta lenta al cargar API de reportes,El endpoint responde lentamente aunque no se registran excepciones en los logs. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,performance
+TKT-0443,Dependencia crítica pendiente de actualizar,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0382,CPU elevada en el servicio de API de reportes,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0329,Añadir filtros avanzados para los usuarios,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0088,HTTP 500 al guardar un registro desde la aplicación,"La pantalla queda en blanco después de cargar el historial, aunque antes funcionaba. El reporte apareció después de un cambio reciente en el servicio.",bug
+TKT-0134,Excepción intermitente en formulario de acceso,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario. En una parte del flujo también se observa un timeout ocasional.,bug
+TKT-0156,La interfaz se rompe al exportar datos,El usuario recibe una excepción ValueError y la operación no termina.,bug
+TKT-0280,Añadir exportación CSV para los usuarios,La interfaz debería ofrecer una opción para paginación y confirmar el resultado.,feature
+TKT-0409,CPU elevada en el servicio de formulario de acceso,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0358,Optimizar el rendimiento de cargar el historial,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0037,Excepción intermitente en API de reportes,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0168,Error al actualizar el perfil en API de reportes,El comportamiento se reproduce en Firefox y bloquea el flujo habitual. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,bug
+TKT-0056,Excepción intermitente en endpoint de usuarios,"La pantalla queda en blanco después de exportar datos, aunque antes funcionaba.",bug
+TKT-0060,Excepción intermitente en endpoint de usuarios,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,security
+TKT-0375,CPU elevada en el servicio de formulario de acceso,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0260,Añadir búsqueda por etiquetas para los usuarios,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo. El impacto depende del volumen de tráfico y del entorno de ejecución.,feature
+TKT-0021,HTTP 500 al cargar el historial desde la aplicación,"La pantalla queda en blanco después de iniciar sesión, aunque antes funcionaba.",security
+TKT-0587,Falta un ejemplo para filtros avanzados en la API,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0175,La operación exportar datos devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0311,Permitir iniciar sesión desde el panel,"El comportamiento actual funciona, pero falta soporte para filtros avanzados.",feature
+TKT-0554,Añadir pasos de configuración para endpoint de usuarios,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0522,Corregir instrucciones del README,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0010,Error al cargar el historial en API de reportes,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0598,Añadir pasos de configuración para endpoint de usuarios,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0123,Regresión en servicio de pagos tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0098,La operación iniciar sesión devuelve un fallo inesperado,El usuario recibe una excepción ValueError y la operación no termina.,bug
+TKT-0401,Timeout al procesar solicitudes grandes,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0293,Mejorar la experiencia de formulario de acceso,Se solicita una API nueva para que los clientes puedan búsqueda por etiquetas.,feature
+TKT-0039,Regresión en servicio de pagos tras el último despliegue,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",bug
+TKT-0321,Propuesta para ampliar formulario de acceso,Sería útil permitir guardar un registro sin salir de la pantalla actual.,feature
+TKT-0026,La interfaz se rompe al guardar un registro,El comportamiento se reproduce en Firefox y bloquea el flujo habitual.,bug
+TKT-0205,Mejorar la experiencia de formulario de acceso,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",feature
+TKT-0545,El ejemplo de paginación no coincide con la API,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0347,Aumenta la latencia de formulario de acceso,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0469,Revisar validación de entrada en exportar datos,Un usuario sin permisos puede consultar datos de otra cuenta.,bug
+TKT-0025,Regresión en servicio de pagos tras el último despliegue,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0295,Mejorar la experiencia de endpoint de usuarios,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",feature
+TKT-0180,HTTP 500 al iniciar sesión desde la aplicación,"La pantalla queda en blanco después de exportar datos, aunque antes funcionaba.",security
+TKT-0034,HTTP 500 al exportar datos desde la aplicación,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba.",bug
+TKT-0558,El ejemplo de filtros avanzados no coincide con la API,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.",docs
+TKT-0345,Optimizar el rendimiento de exportar datos,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0101,Excepción intermitente en servicio de pagos,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0259,Mejorar la experiencia de formulario de acceso,Se solicita una API nueva para que los clientes puedan paginación. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,docs
+TKT-0463,Token expuesto en los logs del servicio,Una entrada sin validar podría permitir SQLi en el navegador.,security
+TKT-0251,Mejorar la experiencia de endpoint de usuarios,Se solicita una API nueva para que los clientes puedan filtros avanzados.,feature
+TKT-0129,Regresión en API de reportes tras el último despliegue,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0102,Error al exportar datos en servicio de pagos,En producción aparece HTTP 500 al cargar el historial; los logs muestran un stack trace.,bug
+TKT-0239,Nuevo endpoint para filtros avanzados,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",feature
+TKT-0534,Falta un ejemplo para búsqueda por etiquetas en la API,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0428,Acceso no autorizado a recursos de panel de administración,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0232,Solicitud de mejora: paginación,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0230,Nuevo endpoint para filtros avanzados,"El comportamiento actual funciona, pero falta soporte para paginación.",feature
+TKT-0024,Error al guardar un registro en endpoint de usuarios,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0360,Consulta lenta al cargar panel de administración,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,security
+TKT-0459,Acceso no autorizado a recursos de servicio de pagos,La ruta no comprueba correctamente la autorización antes de devolver datos. El reporte apareció después de un cambio reciente en el servicio.,security
+TKT-0390,Optimizar el rendimiento de cargar el historial,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0124,Regresión en panel de administración tras el último despliegue,En producción aparece HTTP 500 al iniciar sesión; los logs muestran un stack trace.,bug
+TKT-0560,Corregir instrucciones del README,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0427,Revisar validación de entrada en guardar un registro,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0012,HTTP 500 al exportar datos desde la aplicación,El comportamiento se reproduce en Firefox y bloquea el flujo habitual.,bug
+TKT-0439,Posible vulnerabilidad control de acceso roto en API de reportes,La ruta no comprueba correctamente la autorización antes de devolver datos.,security
+TKT-0146,Error al exportar datos en panel de administración,El comportamiento se reproduce en la última versión de la API y bloquea el flujo habitual.,bug
+TKT-0520,Actualizar la guía de servicio de pagos,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0499,Dependencia crítica pendiente de actualizar,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0528,Añadir pasos de configuración para API de reportes,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0346,CPU elevada en el servicio de panel de administración,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0380,Consulta lenta al cargar servicio de pagos,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,performance
+TKT-0052,Regresión en servicio de pagos tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0142,La interfaz se rompe al cargar el historial,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0049,Error al actualizar el perfil en servicio de pagos,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0290,Mejorar la experiencia de panel de administración,La interfaz debería ofrecer una opción para paginación y confirmar el resultado.,feature
+TKT-0597,Falta un ejemplo para paginación en la API,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0003,Error al guardar un registro en formulario de acceso,El usuario recibe una excepción TypeError y la operación no termina.,security
+TKT-0153,La operación iniciar sesión devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0319,Mejorar la experiencia de formulario de acceso,Se solicita una API nueva para que los clientes puedan filtros avanzados. En una parte del flujo también se observa un timeout ocasional.,feature
+TKT-0288,Permitir cargar el historial desde el panel,"El comportamiento actual funciona, pero falta soporte para paginación. El impacto depende del volumen de tráfico y del entorno de ejecución.",feature
+TKT-0249,Propuesta para ampliar panel de administración,Se solicita una API nueva para que los clientes puedan filtros avanzados.,bug
+TKT-0412,Optimizar el rendimiento de cargar el historial,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0042,La interfaz se rompe al iniciar sesión,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba. El reporte apareció después de un cambio reciente en el servicio.",bug
+TKT-0430,Posible vulnerabilidad SQLi en servicio de pagos,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0062,La operación iniciar sesión devuelve un fallo inesperado,"La pantalla queda en blanco después de exportar datos, aunque antes funcionaba. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.",bug
+TKT-0008,Regresión en formulario de acceso tras el último despliegue,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0514,Documentación desactualizada para cargar el historial,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0364,Alto consumo de memoria durante exportar datos,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico. El reporte apareció después de un cambio reciente en el servicio.,performance
+TKT-0397,Aumenta la latencia de endpoint de usuarios,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0417,Alto consumo de memoria durante guardar un registro,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0472,Acceso no autorizado a recursos de formulario de acceso,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0020,Regresión en endpoint de usuarios tras el último despliegue,El comportamiento se reproduce en la última versión de la API y bloquea el flujo habitual. El impacto depende del volumen de tráfico y del entorno de ejecución.,bug
+TKT-0027,La operación guardar un registro devuelve un fallo inesperado,El usuario recibe una excepción ValueError y la operación no termina.,bug
+TKT-0411,Consulta lenta al cargar formulario de acceso,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0070,Excepción intermitente en API de reportes,"La pantalla queda en blanco después de exportar datos, aunque antes funcionaba.",bug
+TKT-0050,La operación exportar datos devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0269,Propuesta para ampliar endpoint de usuarios,"El comportamiento actual funciona, pero falta soporte para filtros avanzados. El impacto depende del volumen de tráfico y del entorno de ejecución.",feature
+TKT-0385,Consulta lenta al cargar formulario de acceso,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0549,Actualizar la guía de endpoint de usuarios,El parámetro documentado no coincide con la respuesta actual del servicio. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,docs
+TKT-0426,Posible vulnerabilidad XSS en panel de administración,La dependencia afectada tiene una alerta crítica y requiere mitigación.,bug
+TKT-0416,Alto consumo de memoria durante cargar el historial,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0085,La operación cargar el historial devuelve un fallo inesperado,El usuario recibe una excepción TypeError y la operación no termina.,bug
+TKT-0195,Mejorar la experiencia de panel de administración,La interfaz debería ofrecer una opción para exportación CSV y confirmar el resultado.,feature
+TKT-0208,Añadir paginación para los usuarios,"El comportamiento actual funciona, pero falta soporte para filtros avanzados.",feature
+TKT-0161,Error al cargar el historial en formulario de acceso,El usuario recibe una excepción RuntimeError y la operación no termina. En una parte del flujo también se observa un timeout ocasional.,bug
+TKT-0436,Revisar validación de entrada en iniciar sesión,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0240,Propuesta para ampliar formulario de acceso,Se solicita una API nueva para que los clientes puedan paginación.,feature
+TKT-0307,Nuevo endpoint para filtros avanzados,Sería útil permitir exportar datos sin salir de la pantalla actual.,feature
+TKT-0095,HTTP 500 al iniciar sesión desde la aplicación,El usuario recibe una excepción ValueError y la operación no termina.,bug
+TKT-0201,Propuesta para ampliar endpoint de usuarios,Se solicita una API nueva para que los clientes puedan filtros avanzados.,feature
+TKT-0487,Acceso no autorizado a recursos de endpoint de usuarios,Una entrada sin validar podría permitir SQLi en el navegador.,security
+TKT-0328,Añadir exportación CSV para los usuarios,Sería útil permitir actualizar el perfil sin salir de la pantalla actual.,feature
+TKT-0206,Solicitud de mejora: búsqueda por etiquetas,Se solicita una API nueva para que los clientes puedan búsqueda por etiquetas.,feature
+TKT-0566,El ejemplo de notificaciones no coincide con la API,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0065,La interfaz se rompe al guardar un registro,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",bug
+TKT-0324,Nuevo endpoint para notificaciones,"El comportamiento actual funciona, pero falta soporte para paginación.",feature
+TKT-0268,Nuevo endpoint para paginación,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0048,HTTP 500 al actualizar el perfil desde la aplicación,En producción aparece HTTP 500 al cargar el historial; los logs muestran un stack trace.,bug
+TKT-0140,HTTP 500 al cargar el historial desde la aplicación,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0314,Propuesta para ampliar panel de administración,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0366,Consulta lenta al cargar servicio de pagos,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0458,Revisar validación de entrada en guardar un registro,El token de acceso aparece en los logs y debe quedar redactado. El reporte apareció después de un cambio reciente en el servicio.,security
+TKT-0157,Regresión en endpoint de usuarios tras el último despliegue,"La pantalla queda en blanco después de exportar datos, aunque antes funcionaba. El reporte apareció después de un cambio reciente en el servicio.",bug
+TKT-0257,Añadir notificaciones para los usuarios,La interfaz debería ofrecer una opción para exportación CSV y confirmar el resultado.,feature
+TKT-0133,La operación actualizar el perfil devuelve un fallo inesperado,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba.",bug
+TKT-0233,Mejorar la experiencia de servicio de pagos,Sería útil permitir exportar datos sin salir de la pantalla actual.,feature
+TKT-0217,Permitir iniciar sesión desde el panel,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0203,Añadir filtros avanzados para los usuarios,Se solicita una API nueva para que los clientes puedan notificaciones.,bug
+TKT-0006,La interfaz se rompe al actualizar el perfil,"La pantalla queda en blanco después de exportar datos, aunque antes funcionaba.",bug
+TKT-0083,HTTP 500 al actualizar el perfil desde la aplicación,El usuario recibe una excepción KeyError y la operación no termina. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0258,Mejorar la experiencia de formulario de acceso,Se solicita una API nueva para que los clientes puedan filtros avanzados.,feature
+TKT-0089,HTTP 500 al iniciar sesión desde la aplicación,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0568,Documentación desactualizada para cargar el historial,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0340,Alto consumo de memoria durante iniciar sesión,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0482,Acceso no autorizado a recursos de API de reportes,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0341,Aumenta la latencia de endpoint de usuarios,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0415,Optimizar el rendimiento de exportar datos,La consulta tarda varios segundos y el p95 supera el objetivo de latencia. El reporte apareció después de un cambio reciente en el servicio.,security
+TKT-0306,Añadir filtros avanzados para los usuarios,"El comportamiento actual funciona, pero falta soporte para búsqueda por etiquetas.",feature
+TKT-0488,Permisos incorrectos al acceder a API de reportes,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0173,La operación guardar un registro devuelve un fallo inesperado,"La pantalla queda en blanco después de iniciar sesión, aunque antes funcionaba.",bug
+TKT-0211,Añadir notificaciones para los usuarios,Se solicita una API nueva para que los clientes puedan búsqueda por etiquetas.,docs
+TKT-0301,Nuevo endpoint para filtros avanzados,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo. En una parte del flujo también se observa un timeout ocasional.,feature
+TKT-0154,Regresión en API de reportes tras el último despliegue,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",bug
+TKT-0580,El ejemplo de búsqueda por etiquetas no coincide con la API,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0337,Timeout al procesar solicitudes grandes,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0241,Mejorar la experiencia de endpoint de usuarios,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",feature
+TKT-0383,Optimizar el rendimiento de actualizar el perfil,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,performance
+TKT-0403,Optimizar el rendimiento de iniciar sesión,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0214,Nuevo endpoint para notificaciones,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0292,Solicitud de mejora: notificaciones,Se solicita una API nueva para que los clientes puedan paginación.,feature
+TKT-0588,Actualizar la guía de formulario de acceso,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0542,El ejemplo de filtros avanzados no coincide con la API,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0369,Alto consumo de memoria durante cargar el historial,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0596,Actualizar la guía de formulario de acceso,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0462,Posible vulnerabilidad control de acceso roto en panel de administración,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0188,Nuevo endpoint para exportación CSV,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo. En una parte del flujo también se observa un timeout ocasional.,feature
+TKT-0398,Consulta lenta al cargar API de reportes,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0016,Regresión en formulario de acceso tras el último despliegue,El usuario recibe una excepción RuntimeError y la operación no termina.,bug
+TKT-0081,HTTP 500 al exportar datos desde la aplicación,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0305,Propuesta para ampliar API de reportes,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",docs
+TKT-0521,Falta un ejemplo para paginación en la API,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0038,Regresión en API de reportes tras el último despliegue,El usuario recibe una excepción RuntimeError y la operación no termina.,bug
+TKT-0376,Aumenta la latencia de endpoint de usuarios,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0502,Posible vulnerabilidad XSS en servicio de pagos,Una entrada sin validar podría permitir control de acceso roto en el navegador.,security
+TKT-0028,La operación cargar el historial devuelve un fallo inesperado,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.",bug
+TKT-0191,Añadir filtros avanzados para los usuarios,Se solicita una API nueva para que los clientes puedan filtros avanzados.,feature
+TKT-0552,Documentación desactualizada para actualizar el perfil,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0518,El ejemplo de filtros avanzados no coincide con la API,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0543,Añadir pasos de configuración para endpoint de usuarios,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0334,Aumenta la latencia de servicio de pagos,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0434,Acceso no autorizado a recursos de servicio de pagos,La ruta no comprueba correctamente la autorización antes de devolver datos.,security
+TKT-0371,Timeout al procesar solicitudes grandes,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0480,Dependencia crítica pendiente de actualizar,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0441,Revisar validación de entrada en actualizar el perfil,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0108,La interfaz se rompe al guardar un registro,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0511,Añadir pasos de configuración para panel de administración,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0478,Posible vulnerabilidad control de acceso roto en panel de administración,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0283,Nuevo endpoint para búsqueda por etiquetas,"El comportamiento actual funciona, pero falta soporte para filtros avanzados.",feature
+TKT-0531,El ejemplo de filtros avanzados no coincide con la API,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0236,Nuevo endpoint para paginación,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo. El reporte apareció después de un cambio reciente en el servicio.,feature
+TKT-0151,La operación guardar un registro devuelve un fallo inesperado,El usuario recibe una excepción KeyError y la operación no termina.,bug
+TKT-0493,Acceso no autorizado a recursos de servicio de pagos,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0433,Posible vulnerabilidad XSS en formulario de acceso,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0414,Aumenta la latencia de formulario de acceso,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0031,Regresión en formulario de acceso tras el último despliegue,El usuario recibe una excepción ValueError y la operación no termina. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0442,Dependencia crítica pendiente de actualizar,Un usuario sin permisos puede consultar datos de otra cuenta. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,security
+TKT-0069,La interfaz se rompe al guardar un registro,En producción aparece HTTP 500 al iniciar sesión; los logs muestran un stack trace.,bug
+TKT-0243,Propuesta para ampliar servicio de pagos,Sería útil permitir actualizar el perfil sin salir de la pantalla actual.,feature
+TKT-0286,Mejorar la experiencia de formulario de acceso,Se solicita una API nueva para que los clientes puedan búsqueda por etiquetas.,feature
+TKT-0349,Alto consumo de memoria durante cargar el historial,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0009,HTTP 500 al guardar un registro desde la aplicación,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0105,Regresión en API de reportes tras el último despliegue,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba. El reporte apareció después de un cambio reciente en el servicio.",bug
+TKT-0557,Falta un ejemplo para búsqueda por etiquetas en la API,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0599,El ejemplo de filtros avanzados no coincide con la API,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0121,HTTP 500 al guardar un registro desde la aplicación,En producción aparece HTTP 500 al actualizar el perfil; los logs muestran un stack trace.,bug
+TKT-0517,Añadir pasos de configuración para endpoint de usuarios,La guía de instalación necesita comandos actuales y una nota de configuración.,bug
+TKT-0519,Corregir instrucciones del README,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0391,Consulta lenta al cargar API de reportes,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0270,Añadir exportación CSV para los usuarios,Se solicita una API nueva para que los clientes puedan exportación CSV. El impacto depende del volumen de tráfico y del entorno de ejecución.,bug
+TKT-0589,Falta un ejemplo para paginación en la API,Falta un ejemplo completo de solicitud y respuesta para este endpoint. El reporte apareció después de un cambio reciente en el servicio.,docs
+TKT-0298,Mejorar la experiencia de servicio de pagos,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo. En una parte del flujo también se observa un timeout ocasional.,feature
+TKT-0043,Excepción intermitente en formulario de acceso,En producción aparece HTTP 500 al actualizar el perfil; los logs muestran un stack trace.,bug
+TKT-0368,CPU elevada en el servicio de panel de administración,La consulta tarda varios segundos y el p95 supera el objetivo de latencia. El impacto depende del volumen de tráfico y del entorno de ejecución.,performance
+TKT-0118,La interfaz se rompe al exportar datos,En producción aparece HTTP 500 al cargar el historial; los logs muestran un stack trace. El impacto depende del volumen de tráfico y del entorno de ejecución.,bug
+TKT-0513,El ejemplo de notificaciones no coincide con la API,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0273,Permitir cargar el historial desde el panel,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0253,Solicitud de mejora: filtros avanzados,"El comportamiento actual funciona, pero falta soporte para búsqueda por etiquetas.",feature
+TKT-0274,Propuesta para ampliar servicio de pagos,"El comportamiento actual funciona, pero falta soporte para paginación. El impacto depende del volumen de tráfico y del entorno de ejecución.",feature
+TKT-0559,Añadir pasos de configuración para formulario de acceso,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0515,Documentación desactualizada para exportar datos,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0282,Mejorar la experiencia de API de reportes,Se solicita una API nueva para que los clientes puedan notificaciones.,feature
+TKT-0215,Solicitud de mejora: filtros avanzados,La interfaz debería ofrecer una opción para filtros avanzados y confirmar el resultado.,feature
+TKT-0449,Permisos incorrectos al acceder a formulario de acceso,El token de acceso aparece en los logs y debe quedar redactado.,bug
+TKT-0126,HTTP 500 al exportar datos desde la aplicación,"La pantalla queda en blanco después de cargar el historial, aunque antes funcionaba.",bug
+TKT-0335,Consulta lenta al cargar servicio de pagos,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0071,La operación iniciar sesión devuelve un fallo inesperado,El comportamiento se reproduce en la última versión de la API y bloquea el flujo habitual. El reporte apareció después de un cambio reciente en el servicio.,security
+TKT-0435,Revisar validación de entrada en iniciar sesión,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0326,Permitir exportar datos desde el panel,Se solicita una API nueva para que los clientes puedan filtros avanzados.,feature
+TKT-0309,Nuevo endpoint para notificaciones,La interfaz debería ofrecer una opción para búsqueda por etiquetas y confirmar el resultado. En una parte del flujo también se observa un timeout ocasional.,feature
+TKT-0581,Actualizar la guía de endpoint de usuarios,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0585,Corregir instrucciones del README,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0247,Mejorar la experiencia de servicio de pagos,Se solicita una API nueva para que los clientes puedan exportación CSV.,feature
+TKT-0421,Dependencia crítica pendiente de actualizar,La dependencia afectada tiene una alerta crítica y requiere mitigación. El reporte apareció después de un cambio reciente en el servicio.,security
+TKT-0254,Añadir búsqueda por etiquetas para los usuarios,La interfaz debería ofrecer una opción para búsqueda por etiquetas y confirmar el resultado.,feature
+TKT-0402,Aumenta la latencia de panel de administración,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0465,Revisar validación de entrada en guardar un registro,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0456,Revisar validación de entrada en iniciar sesión,Una entrada sin validar podría permitir control de acceso roto en el navegador.,security
+TKT-0094,Error al cargar el historial en formulario de acceso,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",bug
+TKT-0066,Excepción intermitente en endpoint de usuarios,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0166,Regresión en panel de administración tras el último despliegue,El comportamiento se reproduce en Chrome y bloquea el flujo habitual.,bug
+TKT-0600,Documentación desactualizada para cargar el historial,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0075,La operación guardar un registro devuelve un fallo inesperado,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",bug
+TKT-0143,La interfaz se rompe al iniciar sesión,El usuario recibe una excepción TypeError y la operación no termina. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0373,Optimizar el rendimiento de iniciar sesión,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0489,Revisar validación de entrada en exportar datos,La ruta no comprueba correctamente la autorización antes de devolver datos.,security
+TKT-0296,Añadir filtros avanzados para los usuarios,Se solicita una API nueva para que los clientes puedan búsqueda por etiquetas. En una parte del flujo también se observa un timeout ocasional.,feature
+TKT-0553,El ejemplo de paginación no coincide con la API,El parámetro documentado no coincide con la respuesta actual del servicio. En una parte del flujo también se observa un timeout ocasional.,docs
+TKT-0035,Regresión en servicio de pagos tras el último despliegue,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0245,Nuevo endpoint para exportación CSV,La interfaz debería ofrecer una opción para filtros avanzados y confirmar el resultado. En una parte del flujo también se observa un timeout ocasional.,feature
+TKT-0370,CPU elevada en el servicio de servicio de pagos,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0229,Propuesta para ampliar panel de administración,La interfaz debería ofrecer una opción para paginación y confirmar el resultado.,feature
+TKT-0200,Propuesta para ampliar servicio de pagos,Sería útil permitir exportar datos sin salir de la pantalla actual. El impacto depende del volumen de tráfico y del entorno de ejecución.,feature
+TKT-0400,Alto consumo de memoria durante exportar datos,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes. El reporte apareció después de un cambio reciente en el servicio.,performance
+TKT-0164,HTTP 500 al exportar datos desde la aplicación,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0455,Revisar validación de entrada en iniciar sesión,La dependencia afectada tiene una alerta crítica y requiere mitigación. En una parte del flujo también se observa un timeout ocasional.,security
+TKT-0562,Corregir instrucciones del README,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0399,Optimizar el rendimiento de iniciar sesión,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0420,Consulta lenta al cargar servicio de pagos,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0586,Documentación desactualizada para cargar el historial,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0535,Falta un ejemplo para búsqueda por etiquetas en la API,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0497,Permisos incorrectos al acceder a endpoint de usuarios,La dependencia afectada tiene una alerta crítica y requiere mitigación. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0573,El ejemplo de búsqueda por etiquetas no coincide con la API,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0516,Falta un ejemplo para notificaciones en la API,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.",feature
+TKT-0189,Mejorar la experiencia de servicio de pagos,"El comportamiento actual funciona, pero falta soporte para filtros avanzados.",feature
+TKT-0339,CPU elevada en el servicio de endpoint de usuarios,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0256,Añadir exportación CSV para los usuarios,Sería útil permitir guardar un registro sin salir de la pantalla actual.,feature
+TKT-0139,Error al cargar el historial en endpoint de usuarios,"La pantalla queda en blanco después de cargar el historial, aunque antes funcionaba.",bug
+TKT-0054,Error al guardar un registro en endpoint de usuarios,El comportamiento se reproduce en la última versión de la API y bloquea el flujo habitual.,bug
+TKT-0179,La interfaz se rompe al exportar datos,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0452,Dependencia crítica pendiente de actualizar,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0320,Añadir paginación para los usuarios,Sería útil permitir cargar el historial sin salir de la pantalla actual.,feature
+TKT-0155,La interfaz se rompe al iniciar sesión,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0448,Token expuesto en los logs del servicio,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0342,CPU elevada en el servicio de servicio de pagos,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0077,Regresión en endpoint de usuarios tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0218,Propuesta para ampliar endpoint de usuarios,Se solicita una API nueva para que los clientes puedan exportación CSV.,feature
+TKT-0348,Aumenta la latencia de servicio de pagos,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico.,performance
+TKT-0093,HTTP 500 al actualizar el perfil desde la aplicación,El usuario recibe una excepción KeyError y la operación no termina.,bug
+TKT-0509,Acceso no autorizado a recursos de formulario de acceso,La dependencia afectada tiene una alerta crítica y requiere mitigación. El reporte apareció después de un cambio reciente en el servicio.,security
+TKT-0172,Regresión en formulario de acceso tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,performance
+TKT-0272,Mejorar la experiencia de servicio de pagos,Se solicita una API nueva para que los clientes puedan paginación.,feature
+TKT-0220,Solicitud de mejora: filtros avanzados,"El comportamiento actual funciona, pero falta soporte para exportación CSV.",feature
+TKT-0092,La operación cargar el historial devuelve un fallo inesperado,En producción aparece HTTP 500 al iniciar sesión; los logs muestran un stack trace.,bug
+TKT-0078,Regresión en servicio de pagos tras el último despliegue,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0310,Añadir paginación para los usuarios,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0546,El ejemplo de filtros avanzados no coincide con la API,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0506,Posible vulnerabilidad control de acceso roto en formulario de acceso,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0541,Añadir pasos de configuración para API de reportes,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0061,HTTP 500 al cargar el historial desde la aplicación,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0171,La interfaz se rompe al actualizar el perfil,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0316,Nuevo endpoint para exportación CSV,La interfaz debería ofrecer una opción para filtros avanzados y confirmar el resultado. El impacto depende del volumen de tráfico y del entorno de ejecución.,feature
+TKT-0040,La interfaz se rompe al guardar un registro,En producción aparece HTTP 500 al iniciar sesión; los logs muestran un stack trace.,bug
+TKT-0183,Mejorar la experiencia de panel de administración,Se solicita una API nueva para que los clientes puedan paginación.,feature
+TKT-0145,La interfaz se rompe al cargar el historial,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,security
+TKT-0467,Acceso no autorizado a recursos de API de reportes,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0460,Dependencia crítica pendiente de actualizar,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0057,Excepción intermitente en formulario de acceso,"La pantalla queda en blanco después de cargar el historial, aunque antes funcionaba.",bug
+TKT-0087,Excepción intermitente en servicio de pagos,El usuario recibe una excepción RuntimeError y la operación no termina.,performance
+TKT-0529,Añadir pasos de configuración para panel de administración,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0058,Regresión en servicio de pagos tras el último despliegue,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba. El impacto depende del volumen de tráfico y del entorno de ejecución.",security
+TKT-0422,Token expuesto en los logs del servicio,Una entrada sin validar podría permitir control de acceso roto en el navegador.,bug
+TKT-0367,Timeout al procesar solicitudes grandes,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0352,Optimizar el rendimiento de actualizar el perfil,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0197,Solicitud de mejora: paginación,"El comportamiento actual funciona, pero falta soporte para paginación.",feature
+TKT-0351,CPU elevada en el servicio de API de reportes,El endpoint responde lentamente aunque no se registran excepciones en los logs.,performance
+TKT-0116,Excepción intermitente en formulario de acceso,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0512,Documentación desactualizada para exportar datos,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0336,Consulta lenta al cargar API de reportes,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0544,Falta un ejemplo para notificaciones en la API,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0076,Error al exportar datos en panel de administración,En producción aparece HTTP 500 al iniciar sesión; los logs muestran un stack trace.,bug
+TKT-0198,Propuesta para ampliar formulario de acceso,Sería útil permitir cargar el historial sin salir de la pantalla actual.,feature
+TKT-0219,Solicitud de mejora: paginación,Sería útil permitir guardar un registro sin salir de la pantalla actual. El impacto depende del volumen de tráfico y del entorno de ejecución.,feature
+TKT-0117,Error al iniciar sesión en endpoint de usuarios,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0524,Añadir pasos de configuración para panel de administración,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0115,Excepción intermitente en formulario de acceso,En producción aparece HTTP 500 al actualizar el perfil; los logs muestran un stack trace.,bug
+TKT-0001,La interfaz se rompe al guardar un registro,El usuario recibe una excepción RuntimeError y la operación no termina.,bug
+TKT-0073,HTTP 500 al cargar el historial desde la aplicación,El comportamiento se reproduce en Chrome y bloquea el flujo habitual. El impacto depende del volumen de tráfico y del entorno de ejecución.,bug
+TKT-0213,Solicitud de mejora: filtros avanzados,Sería útil permitir guardar un registro sin salir de la pantalla actual.,feature
+TKT-0429,Permisos incorrectos al acceder a servicio de pagos,Una entrada sin validar podría permitir inyección en el navegador.,performance
+TKT-0454,Posible vulnerabilidad inyección en API de reportes,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0262,Solicitud de mejora: filtros avanzados,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0470,Acceso no autorizado a recursos de API de reportes,El token de acceso aparece en los logs y debe quedar redactado.,performance
+TKT-0567,Actualizar la guía de endpoint de usuarios,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0475,Posible vulnerabilidad XSS en endpoint de usuarios,La ruta no comprueba correctamente la autorización antes de devolver datos.,security
+TKT-0591,El ejemplo de filtros avanzados no coincide con la API,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0023,La operación guardar un registro devuelve un fallo inesperado,"La pantalla queda en blanco después de iniciar sesión, aunque antes funcionaba.",bug
+TKT-0423,Dependencia crítica pendiente de actualizar,Una entrada sin validar podría permitir control de acceso roto en el navegador.,security
+TKT-0574,Actualizar la guía de formulario de acceso,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0064,La operación actualizar el perfil devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0479,Dependencia crítica pendiente de actualizar,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0510,Dependencia crítica pendiente de actualizar,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0579,Falta un ejemplo para filtros avanzados en la API,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0355,Consulta lenta al cargar servicio de pagos,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0279,Mejorar la experiencia de formulario de acceso,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0029,HTTP 500 al cargar el historial desde la aplicación,El comportamiento se reproduce en Firefox y bloquea el flujo habitual.,bug
+TKT-0125,Excepción intermitente en servicio de pagos,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0080,Error al exportar datos en formulario de acceso,El usuario recibe una excepción KeyError y la operación no termina.,bug
+TKT-0492,Posible vulnerabilidad XSS en servicio de pagos,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0170,Excepción intermitente en API de reportes,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",bug
+TKT-0158,Regresión en panel de administración tras el último despliegue,El comportamiento se reproduce en Firefox y bloquea el flujo habitual.,bug
+TKT-0084,Regresión en servicio de pagos tras el último despliegue,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual.,bug
+TKT-0418,Consulta lenta al cargar endpoint de usuarios,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,bug
+TKT-0228,Nuevo endpoint para filtros avanzados,Se solicita una API nueva para que los clientes puedan exportación CSV.,feature
+TKT-0555,El ejemplo de notificaciones no coincide con la API,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0540,Actualizar la guía de formulario de acceso,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0389,CPU elevada en el servicio de endpoint de usuarios,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento.,performance
+TKT-0246,Mejorar la experiencia de API de reportes,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0533,Documentación desactualizada para iniciar sesión,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0104,La interfaz se rompe al cargar el historial,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0044,Regresión en servicio de pagos tras el último despliegue,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",security
+TKT-0363,Consulta lenta al cargar endpoint de usuarios,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0530,Corregir instrucciones del README,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0174,HTTP 500 al actualizar el perfil desde la aplicación,El usuario recibe una excepción ValueError y la operación no termina.,bug
+TKT-0578,El ejemplo de búsqueda por etiquetas no coincide con la API,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0377,Aumenta la latencia de panel de administración,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,performance
+TKT-0278,Añadir filtros avanzados para los usuarios,Sería útil permitir guardar un registro sin salir de la pantalla actual.,feature
+TKT-0055,Excepción intermitente en API de reportes,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0507,Permisos incorrectos al acceder a panel de administración,La dependencia afectada tiene una alerta crítica y requiere mitigación.,security
+TKT-0550,Añadir pasos de configuración para API de reportes,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0005,La operación iniciar sesión devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0495,Posible vulnerabilidad XSS en formulario de acceso,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0406,Aumenta la latencia de servicio de pagos,La consulta tarda varios segundos y el p95 supera el objetivo de latencia. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0007,Excepción intermitente en formulario de acceso,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0308,Añadir paginación para los usuarios,Sería útil permitir actualizar el perfil sin salir de la pantalla actual.,feature
+TKT-0322,Solicitud de mejora: búsqueda por etiquetas,La interfaz debería ofrecer una opción para paginación y confirmar el resultado.,feature
+TKT-0481,Posible vulnerabilidad control de acceso roto en endpoint de usuarios,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0532,Actualizar la guía de endpoint de usuarios,El README describe una opción que ya no existe y confunde a quienes empiezan. En una parte del flujo también se observa un timeout ocasional.,docs
+TKT-0275,Solicitud de mejora: notificaciones,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0582,El ejemplo de filtros avanzados no coincide con la API,El parámetro documentado no coincide con la respuesta actual del servicio.,docs
+TKT-0590,Documentación desactualizada para guardar un registro,El parámetro documentado no coincide con la respuesta actual del servicio. El impacto depende del volumen de tráfico y del entorno de ejecución.,docs
+TKT-0136,HTTP 500 al iniciar sesión desde la aplicación,El comportamiento se reproduce en Firefox y bloquea el flujo habitual.,bug
+TKT-0045,La operación cargar el historial devuelve un fallo inesperado,El usuario recibe una excepción RuntimeError y la operación no termina.,bug
+TKT-0014,Excepción intermitente en API de reportes,El comportamiento se reproduce en la última versión de la API y bloquea el flujo habitual.,bug
+TKT-0113,La interfaz se rompe al iniciar sesión,El usuario recibe una excepción KeyError y la operación no termina.,bug
+TKT-0539,Falta un ejemplo para exportación CSV en la API,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0394,Timeout al procesar solicitudes grandes,El endpoint responde lentamente aunque no se registran excepciones en los logs. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0387,Optimizar el rendimiento de actualizar el perfil,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0526,Corregir instrucciones del README,Falta un ejemplo completo de solicitud y respuesta para este endpoint. El reporte apareció después de un cambio reciente en el servicio.,feature
+TKT-0013,HTTP 500 al actualizar el perfil desde la aplicación,En producción aparece HTTP 500 al guardar un registro; los logs muestran un stack trace.,bug
+TKT-0141,La operación cargar el historial devuelve un fallo inesperado,El usuario recibe una excepción KeyError y la operación no termina.,bug
+TKT-0103,La operación guardar un registro devuelve un fallo inesperado,En producción aparece HTTP 500 al exportar datos; los logs muestran un stack trace.,bug
+TKT-0413,CPU elevada en el servicio de API de reportes,La CPU permanece elevada y la cola de trabajos crece durante el procesamiento. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0466,Revisar validación de entrada en guardar un registro,Una entrada sin validar podría permitir control de acceso roto en el navegador.,security
+TKT-0252,Añadir filtros avanzados para los usuarios,Sería útil permitir guardar un registro sin salir de la pantalla actual.,feature
+TKT-0437,Permisos incorrectos al acceder a endpoint de usuarios,Un usuario sin permisos puede consultar datos de otra cuenta.,security
+TKT-0074,HTTP 500 al iniciar sesión desde la aplicación,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0147,La interfaz se rompe al actualizar el perfil,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0072,Error al cargar el historial en API de reportes,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0193,Permitir exportar datos desde el panel,Se solicita una API nueva para que los clientes puedan filtros avanzados. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,feature
+TKT-0404,Optimizar el rendimiento de exportar datos,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0182,Solicitud de mejora: búsqueda por etiquetas,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,bug
+TKT-0167,La operación guardar un registro devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0318,Solicitud de mejora: filtros avanzados,Se solicita una API nueva para que los clientes puedan exportación CSV.,feature
+TKT-0022,Error al iniciar sesión en servicio de pagos,"La pantalla queda en blanco después de cargar el historial, aunque antes funcionaba.",bug
+TKT-0289,Propuesta para ampliar servicio de pagos,Sería útil permitir cargar el historial sin salir de la pantalla actual.,feature
+TKT-0185,Añadir búsqueda por etiquetas para los usuarios,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0503,Acceso no autorizado a recursos de formulario de acceso,Una entrada sin validar podría permitir XSS en el navegador.,security
+TKT-0194,Nuevo endpoint para filtros avanzados,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0570,Actualizar la guía de API de reportes,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0190,Mejorar la experiencia de formulario de acceso,"El comportamiento actual funciona, pero falta soporte para filtros avanzados. El reporte apareció después de un cambio reciente en el servicio.",feature
+TKT-0471,Acceso no autorizado a recursos de endpoint de usuarios,La ruta no comprueba correctamente la autorización antes de devolver datos. El impacto depende del volumen de tráfico y del entorno de ejecución.,security
+TKT-0186,Añadir paginación para los usuarios,Se solicita una API nueva para que los clientes puedan notificaciones.,feature
+TKT-0508,Token expuesto en los logs del servicio,La ruta no comprueba correctamente la autorización antes de devolver datos.,performance
+TKT-0096,HTTP 500 al actualizar el perfil desde la aplicación,El comportamiento se reproduce en el entorno de staging y bloquea el flujo habitual. El reporte apareció después de un cambio reciente en el servicio.,bug
+TKT-0491,Acceso no autorizado a recursos de panel de administración,El token de acceso aparece en los logs y debe quedar redactado. El reporte apareció después de un cambio reciente en el servicio.,security
+TKT-0595,Corregir instrucciones del README,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0584,El ejemplo de filtros avanzados no coincide con la API,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0445,Acceso no autorizado a recursos de panel de administración,El token de acceso aparece en los logs y debe quedar redactado.,security
+TKT-0238,Mejorar la experiencia de formulario de acceso,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0457,Permisos incorrectos al acceder a endpoint de usuarios,Una entrada sin validar podría permitir XSS en el navegador.,security
+TKT-0160,La operación guardar un registro devuelve un fallo inesperado,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0405,Optimizar el rendimiento de guardar un registro,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0209,Solicitud de mejora: paginación,La interfaz debería ofrecer una opción para notificaciones y confirmar el resultado.,feature
+TKT-0276,Propuesta para ampliar formulario de acceso,Sería útil permitir actualizar el perfil sin salir de la pantalla actual.,feature
+TKT-0576,Falta un ejemplo para filtros avanzados en la API,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible. En una parte del flujo también se observa un timeout ocasional.",docs
+TKT-0226,Solicitud de mejora: búsqueda por etiquetas,Sería útil permitir exportar datos sin salir de la pantalla actual.,feature
+TKT-0453,Posible vulnerabilidad XSS en endpoint de usuarios,Una entrada sin validar podría permitir SQLi en el navegador.,security
+TKT-0212,Nuevo endpoint para búsqueda por etiquetas,Sería útil permitir exportar datos sin salir de la pantalla actual.,feature
+TKT-0264,Permitir actualizar el perfil desde el panel,Se solicita una API nueva para que los clientes puedan búsqueda por etiquetas.,feature
+TKT-0392,CPU elevada en el servicio de endpoint de usuarios,Se observan timeouts bajo carga; la respuesta se degrada al crecer el tráfico. En una parte del flujo también se observa un timeout ocasional.,performance
+TKT-0109,Error al cargar el historial en endpoint de usuarios,"La pantalla queda en blanco después de actualizar el perfil, aunque antes funcionaba.",security
+TKT-0551,El ejemplo de paginación no coincide con la API,Falta un ejemplo completo de solicitud y respuesta para este endpoint.,docs
+TKT-0017,Error al iniciar sesión en formulario de acceso,"La pantalla queda en blanco después de exportar datos, aunque antes funcionaba.",bug
+TKT-0263,Permitir actualizar el perfil desde el panel,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0181,Nuevo endpoint para búsqueda por etiquetas,Se solicita una API nueva para que los clientes puedan filtros avanzados.,feature
+TKT-0287,Propuesta para ampliar panel de administración,"El comportamiento actual funciona, pero falta soporte para notificaciones.",feature
+TKT-0225,Permitir iniciar sesión desde el panel,Sería útil permitir cargar el historial sin salir de la pantalla actual.,feature
+TKT-0365,Optimizar el rendimiento de actualizar el perfil,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0011,La operación iniciar sesión devuelve un fallo inesperado,El usuario recibe una excepción ValueError y la operación no termina.,bug
+TKT-0059,La interfaz se rompe al iniciar sesión,El usuario recibe una excepción ValueError y la operación no termina.,bug
+TKT-0583,Actualizar la guía de servicio de pagos,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0302,Añadir filtros avanzados para los usuarios,Se solicita una API nueva para que los clientes puedan paginación.,feature
+TKT-0419,CPU elevada en el servicio de endpoint de usuarios,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0593,Corregir instrucciones del README,El README describe una opción que ya no existe y confunde a quienes empiezan.,docs
+TKT-0271,Propuesta para ampliar formulario de acceso,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0563,Corregir instrucciones del README,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",docs
+TKT-0086,Regresión en servicio de pagos tras el último despliegue,En producción aparece HTTP 500 al actualizar el perfil; los logs muestran un stack trace.,bug
+TKT-0333,Timeout al procesar solicitudes grandes,La consulta tarda varios segundos y el p95 supera el objetivo de latencia.,performance
+TKT-0378,Consulta lenta al cargar panel de administración,El proceso consume demasiada memoria cuando aumenta el volumen de solicitudes.,performance
+TKT-0356,Aumenta la latencia de servicio de pagos,El endpoint responde lentamente aunque no se registran excepciones en los logs.,bug
+TKT-0002,HTTP 500 al actualizar el perfil desde la aplicación,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,bug
+TKT-0119,Regresión en API de reportes tras el último despliegue,"La pantalla queda en blanco después de iniciar sesión, aunque antes funcionaba.",bug
+TKT-0548,Documentación desactualizada para exportar datos,"Se solicita aclarar los pasos de uso, con un ejemplo reproducible.",bug
+TKT-0216,Mejorar la experiencia de API de reportes,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,feature
+TKT-0255,Propuesta para ampliar servicio de pagos,Sería útil permitir actualizar el perfil sin salir de la pantalla actual.,feature
+TKT-0053,Regresión en servicio de pagos tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0277,Solicitud de mejora: notificaciones,Sería útil permitir iniciar sesión sin salir de la pantalla actual.,feature
+TKT-0137,Regresión en servicio de pagos tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0285,Nuevo endpoint para paginación,Sería útil permitir cargar el historial sin salir de la pantalla actual. Conviene revisar los logs y el comportamiento del endpoint durante el diagnóstico.,feature
+TKT-0152,Regresión en formulario de acceso tras el último despliegue,El comportamiento se reproduce en la última versión de la API y bloquea el flujo habitual.,bug
+TKT-0041,Regresión en API de reportes tras el último despliegue,La respuesta del servicio es incorrecta y provoca un fallo visible para el usuario.,bug
+TKT-0299,Permitir actualizar el perfil desde el panel,Esta mejora reduciría pasos manuales y facilitaría el flujo de trabajo.,feature
+TKT-0244,Propuesta para ampliar API de reportes,La interfaz debería ofrecer una opción para búsqueda por etiquetas y confirmar el resultado.,feature
+TKT-0547,El ejemplo de búsqueda por etiquetas no coincide con la API,La guía de instalación necesita comandos actuales y una nota de configuración.,docs
+TKT-0047,Excepción intermitente en servicio de pagos,"La pantalla queda en blanco después de guardar un registro, aunque antes funcionaba.",bug
