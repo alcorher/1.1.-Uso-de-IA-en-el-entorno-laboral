@@ -86,8 +86,6 @@ El entrenamiento genera `models/triage_pipeline.joblib` y actualiza `docs/metric
 
 ## Verificación y evidencias (capturas)
 
-Ejecuta los comandos de la sección anterior y guarda capturas legibles de la terminal en `docs/screenshots/` con estos nombres:
-
 ![Entrenamiento y métricas](docs/screenshots/train_metrics.png)
 
 ![Demo CLI](docs/screenshots/predict_demo.png)
