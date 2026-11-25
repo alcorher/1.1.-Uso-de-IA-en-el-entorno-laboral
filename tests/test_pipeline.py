@@ -11,8 +11,14 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src.predict import MODEL_PATH, predict_ticket
-from src.train import build_pipeline, train_and_evaluate
+from src.predict import (
+    MODEL_PATH,
+    explain_prediction,
+    parse_args,
+    predict_ticket,
+    print_single_prediction,
+)
+from src.train import build_pipeline, top_positive_ngrams, train_and_evaluate
 from src.utils import clean_text
 
 
@@ -41,6 +47,26 @@ def test_pipeline_training_and_prediction(dataset: pd.DataFrame) -> None:
     assert label in set(small_dataset["category"])
     assert 0.0 <= confidence <= 1.0
     assert sum(probabilities.values()) == pytest.approx(1.0)
+
+
+def test_explainability(dataset: pd.DataFrame, monkeypatch, capsys) -> None:
+    pipeline, _ = train_and_evaluate(dataset)
+    text = "HTTP 500 al guardar los datos"
+
+    terms = explain_prediction(pipeline, text)
+    assert 0 < len(terms) <= 3
+    assert all(contribution > 0 for _, contribution in terms)
+    assert all(term in text.lower() for term, _ in terms)
+    assert all(
+        len(ngrams) <= 5 for ngrams in top_positive_ngrams(pipeline).values()
+    )
+
+    print_single_prediction(pipeline, text, explain=True)
+    assert "Términos con mayor contribución:" in capsys.readouterr().out
+
+    monkeypatch.setattr(sys, "argv", ["predict.py", "--demo", "--explain"])
+    args = parse_args()
+    assert args.demo and args.explain
 
 
 def test_edge_cases_inference(dataset: pd.DataFrame) -> None:

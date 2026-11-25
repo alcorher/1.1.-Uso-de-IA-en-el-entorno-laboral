@@ -25,6 +25,12 @@ Métricas reales de la ejecución actual de `train.py`:
 
 El informe completo y la matriz de confusión se guardan en [`docs/metrics.json`](docs/metrics.json). Las métricas son de datos sintéticos y no predicen el rendimiento sobre incidencias reales.
 
+## Evaluación crítica del enfoque de Machine Learning
+
+TF-IDF con regresión logística ofrece entrenamiento e inferencia rápidos, bajo consumo de recursos y cierta interpretabilidad: los pesos positivos muestran qué n-gramas se asocian a cada categoría, y `--explain` destaca los términos que contribuyeron a una predicción. Sin embargo, el modelo se basa en coincidencias de palabras y no comprende bien el contexto. Por ejemplo, puede confundir solicitudes de documentación con un bug, como el ticket de prueba «documentación desactualizada para exportar datos…» (real: `bug`, predicha: `docs`). También confundió una incidencia de seguridad que mencionaba «consulta lenta» y «memoria» con `performance` (real: `security`); y una incidencia de `performance` que mencionaba un token expuesto fue predicha como `security`.
+
+Las negaciones («no hay error») y el lenguaje ambiguo pueden invertir el sentido sin cambiar las palabras clave; el vocabulario fuera del dominio (*out-of-vocabulary*) no aporta características TF-IDF y deja poca evidencia para decidir. Además, estos errores proceden de una partición de prueba de datos sintéticos, así que las métricas y explicaciones requieren validación con tickets reales y revisión humana antes de usarse para priorizar, especialmente en seguridad.
+
 ## Investigación y mapeo crítico de herramientas de IA
 
 | Herramienta y categoría | Integración en el flujo | Ventajas observables | Limitaciones y riesgos |

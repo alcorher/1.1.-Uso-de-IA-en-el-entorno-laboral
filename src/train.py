@@ -52,6 +52,38 @@ def prepare_texts(dataset: pd.DataFrame) -> pd.Series:
     return (dataset["title"].fillna("") + " " + dataset["description"].fillna("")).map(clean_text)
 
 
+def top_positive_ngrams(
+    pipeline: Pipeline, limit: int = 5
+) -> dict[str, list[tuple[str, float]]]:
+    """Devuelve los n-gramas con mayor peso positivo de cada categoría."""
+    vectorizer = pipeline.named_steps["tfidf"]
+    classifier = pipeline.named_steps["classifier"]
+    feature_names = vectorizer.get_feature_names_out()
+    result = {}
+
+    for label, coefficients in zip(classifier.classes_, classifier.coef_):
+        positive_indices = [
+            index for index, coefficient in enumerate(coefficients) if coefficient > 0
+        ]
+        top_indices = sorted(
+            positive_indices, key=lambda index: coefficients[index], reverse=True
+        )[:limit]
+        result[label] = [
+            (str(feature_names[index]), float(coefficients[index]))
+            for index in top_indices
+        ]
+
+    return result
+
+
+def print_top_positive_ngrams(pipeline: Pipeline) -> None:
+    """Imprime los n-gramas más asociados a cada categoría."""
+    print("\nN-gramas con mayor peso positivo por categoría:")
+    for label, ngrams in top_positive_ngrams(pipeline).items():
+        terms = ", ".join(f"{term} ({weight:.3f})" for term, weight in ngrams)
+        print(f"  {label:<12} {terms}")
+
+
 def train_and_evaluate(dataset: pd.DataFrame) -> tuple[Pipeline, dict]:
     """Entrena el pipeline y devuelve métricas en datos de prueba reservados."""
     texts = prepare_texts(dataset)
@@ -104,6 +136,20 @@ def train_and_evaluate(dataset: pd.DataFrame) -> tuple[Pipeline, dict]:
         f"F1 macro: {metrics['f1_macro']:.3f} | "
         f"F1 ponderado: {metrics['f1_weighted']:.3f}"
     )
+    print_top_positive_ngrams(pipeline)
+    print("\nEjemplos mal clasificados (máximo 3):")
+    shown = 0
+    for text, actual, predicted in zip(x_test, y_test, predictions):
+        if actual == predicted:
+            continue
+        summary = text if len(text) <= 120 else f"{text[:117]}..."
+        print(f"  Texto: {summary}")
+        print(f"  Real: {actual} | Predicha: {predicted}")
+        shown += 1
+        if shown == 3:
+            break
+    if shown == 0:
+        print("  Ninguno.")
     return pipeline, metrics
 
 
